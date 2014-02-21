@@ -53,6 +53,7 @@ class glance::api(
   $log_file          = '/var/log/glance/api.log',
   $registry_host     = '0.0.0.0',
   $registry_port     = '9191',
+  $registry_protocol = 'http',
   $auth_type         = 'keystone',
   $auth_host         = '127.0.0.1',
   $auth_url          = 'http://localhost:5000/v2.0',
@@ -128,6 +129,7 @@ class glance::api(
   glance_cache_config {
     'DEFAULT/registry_host': value => $registry_host;
     'DEFAULT/registry_port': value => $registry_port;
+    'DEFAULT/registry_client_protocol': value => $registry_protocol;
   }
 
   # db connection config
