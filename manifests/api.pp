@@ -124,6 +124,7 @@ class glance::api(
   glance_api_config {
     'DEFAULT/registry_host': value => $registry_host;
     'DEFAULT/registry_port': value => $registry_port;
+    'DEFAULT/registry_client_protocol': value => $registry_protocol;
   }
 
   glance_cache_config {
